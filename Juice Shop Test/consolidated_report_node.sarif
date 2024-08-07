@@ -1,0 +1,1495 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "semgrep",
+          "informationUri": "https://semgrep.dev"
+        }
+      },
+      "results": [
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "5b76de39e3eeedbaab82cfdb1d847922daabef9c072fefb88a0d782819c0c122275263b2cbacbbdc59f57f2911d5d883f26f890e44858c06f16ac6f568bbb8f7_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/dbSchemaChallenge_1.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 162,
+                  "endLine": 5,
+                  "snippet": {
+                    "text": "    models.sequelize.query(\"SELECT * FROM Products WHERE ((name LIKE '%\"+criteria+\"%' OR description LIKE '%\"+criteria+\"%') AND deletedAt IS NULL) ORDER BY name\")"
+                  },
+                  "startColumn": 28,
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "caed9174c6e5ee599263506a5b97d5c81f6d47a38584d2b2e105cd40b4adaf0d512b2d044d9d9bcacade972694c5db8c86645958489627a63d3cbe4407ef78fa_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/dbSchemaChallenge_1.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 82,
+                  "endLine": 5,
+                  "snippet": {
+                    "text": "    models.sequelize.query(\"SELECT * FROM Products WHERE ((name LIKE '%\"+criteria+\"%' OR description LIKE '%\"+criteria+\"%') AND deletedAt IS NULL) ORDER BY name\")"
+                  },
+                  "startColumn": 74,
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "5a20b762653e258a5bf1e447eeebeb48f43021b99eb1e239e2784bc7f84de1fb3f0bdd6cebb11fad2cf63a590dd6627f0a1620fb4d174ceaa81ced79ef785588_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/dbSchemaChallenge_3.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 159,
+                  "endLine": 11,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 28,
+                  "startLine": 11
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "27b1ecf83fe02701d5623ef709dc0e2da24239f03e4e74f539b5fec66638c79feff7c22de8433a4dc2a0689fcec651e2f4fd6c497cc83f8ea889418007096fd7_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/dbSchemaChallenge_3.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 82,
+                  "endLine": 11,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 74,
+                  "startLine": 11
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "e58561ecc446510502b65e22e92b5f1a774d7183e62c74c6fe422002d4dfcfa28d14b7e6f4221cd794fff927deae457fdbc34348dfea9804303642b079e06de7_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/unionSqlInjectionChallenge_1.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 159,
+                  "endLine": 6,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 28,
+                  "startLine": 6
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "db2a2fd765404d5ee0e3bf19f760fca4ff832653868fc1989b16bc992469bc48f14ae87c4555a950f00a6a40ebd88a7bc1cc52927d1f7a9f522c572630e554ee_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/unionSqlInjectionChallenge_1.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 82,
+                  "endLine": 6,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 74,
+                  "startLine": 6
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "1a1ed459f0db896d4693e1727659869720e0de00d91efbe484fd2208c1cbd9e72260124492a9bd1d0c91dfbf52dcb2455f065d033823ad7ae7cbe7629eb1f34b_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/unionSqlInjectionChallenge_3.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 159,
+                  "endLine": 10,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 28,
+                  "startLine": 10
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b01334ac9eb433ba858d3984fdb160ba1506b184441e478bb4d1e1367271a29055f18e047dc933a9635244761ba2227c967a8e11a4594a0f3846c8af7c4dbcb2_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/data/static/codefixes/unionSqlInjectionChallenge_3.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 82,
+                  "endLine": 10,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`)"
+                  },
+                  "startColumn": 74,
+                  "startLine": 10
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "4d4caecb3d4af9a0bba1b27c31ea6460b5ab962179f4b5c224a76712dcba053d1b5946317ff629f136dc1d5c0eddba70b2a7f1a00423861b27959d5c2478541e_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/lib/insecurity.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 901,
+                  "endLine": 23,
+                  "snippet": {
+                    "text": "const privateKey = '-----BEGIN RSA PRIVATE KEY-----\\r\\nMIICXAIBAAKBgQDNwqLEe9wgTXCbC7+RPdDbBbeqjdbs4kOPOIGzqLpXvJXlxxW8iMz0EaM4BKUqYsIa+ndv3NAn2RxCd5ubVdJJcX43zO6Ko0TFEZx/65gY3BE0O6syCEmUP4qbSd6exou/F+WTISzbQ5FBVPVmhnYhG/kpwt/cIxK5iUn5hm+4tQIDAQABAoGBAI+8xiPoOrA+KMnG/T4jJsG6TsHQcDHvJi7o1IKC/hnIXha0atTX5AUkRRce95qSfvKFweXdJXSQ0JMGJyfuXgU6dI0TcseFRfewXAa/ssxAC+iUVR6KUMh1PE2wXLitfeI6JLvVtrBYswm2I7CtY0q8n5AGimHWVXJPLfGV7m0BAkEA+fqFt2LXbLtyg6wZyxMA/cnmt5Nt3U2dAu77MzFJvibANUNHE4HPLZxjGNXN+a6m0K6TD4kDdh5HfUYLWWRBYQJBANK3carmulBwqzcDBjsJ0YrIONBpCAsXxk8idXb8jL9aNIg15Wumm2enqqObahDHB5jnGOLmbasizvSVqypfM9UCQCQl8xIqy+YgURXzXCN+kwUgHinrutZms87Jyi+D8Br8NY0+Nlf+zHvXAomD2W5CsEK7C+8SLBr3k/TsnRWHJuECQHFE9RA2OP8WoaLPuGCyFXaxzICThSRZYluVnWkZtxsBhW2W8z1b8PvWUE7kMy7TnkzeJS2LSnaNHoyxi7IaPQUCQCwWU4U+v4lD7uYBw00Ga/xt+7+UqFPlPVdz1yyr4q24Zxaw0LgmuEvgU5dycq8N7JxjTubX0MIRR+G9fmDBBl8=\\r\\n-----END RSA PRIVATE KEY-----'"
+                  },
+                  "startColumn": 21,
+                  "startLine": 23
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+          },
+          "properties": {},
+          "ruleId": "javascript.lang.hardcoded.strings.detected-private-key.detected-private-key"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "3acb7a55e705ea546aa03b4dd7c2caebaee968da35d03bcaf82e73b596770d1b56d147ad872406446837efaff1dfc670834eec24716f6badf74f656108cb2ef0_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/lib/insecurity.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 66,
+                  "endLine": 56,
+                  "snippet": {
+                    "text": "export const authorize = (user = {}) => jwt.sign(user, privateKey, { expiresIn: '6h', algorithm: 'RS256' })"
+                  },
+                  "startColumn": 56,
+                  "startLine": 56
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module)."
+          },
+          "properties": {},
+          "ruleId": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "af7f6d81d1cb884c4732079c46d03b02f9b43c4d1235bca2f2759b08483fab7adfc38dfcbaf0f614c0c7f17b56c466e113d6e5391438f8e0bc76084196592f3a_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/lib/insecurity.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 36,
+                  "endLine": 195,
+                  "snippet": {
+                    "text": "          res.cookie('token', token)"
+                  },
+                  "startColumn": 31,
+                  "startLine": 195
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected `req` argument which enters `res.cookie`, this can lead to session fixation vulnerabilities if an attacker can control the cookie value. This vulnerability can lead to unauthorized access to accounts, and in some esoteric cases, Cross-Site-Scripting (XSS). Users should not be able to influence cookies directly, for session cookies, they should be generated securely using an approved session management library. If the cookie does need to be set by a user, consider using an allow-list based approach to restrict the cookies which can be set."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.session-fixation.session-fixation"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "3c06a0d28288cbdd69a42a4b38dd9f18c70e8a89bc8584943539d1f97e78a291ea59247f671f97d60751722a50c7a4485aefe35647645afba3d89713e6a7a59e_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/models/index.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 66,
+                  "endLine": 29,
+                  "snippet": {
+                    "text": "const sequelize = new Sequelize('database', 'username', 'password', {"
+                  },
+                  "startColumn": 58,
+                  "startLine": 29
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.node-sequelize-hardcoded-secret-argument.node-sequelize-hardcoded-secret-argument"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b2ee3aa032ac312d8a0cc6764fc0b5b0708b54a436ca1bdd264b5d6d540e64ec6d8cd7d68fa11d560626ee43fd573883d7fc0526b08c8ce810829c078c9688ba_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/chatbot.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 56,
+                  "endLine": 198,
+                  "snippet": {
+                    "text": "        body: bot.training.state ? bot.greet(`${user.id}`) : `${config.get<string>('application.chatBot.name')} isn't ready at the moment, please wait while I set things up`"
+                  },
+                  "startColumn": 46,
+                  "startLine": 198
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.raw-html-format.raw-html-format"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "abd83ac1c3344df33e73ff556871d4db858195dd292d16a7b30a81a1560e7b8c0758e468a88fb2cbd6a94c633ba0f2e0a9224ab3de7e0dfdc0516ce6478637f6_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/dataErasure.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 60,
+                  "endLine": 69,
+                  "snippet": {
+                    "text": "      const filePath: string = path.resolve(req.body.layout).toLowerCase()"
+                  },
+                  "startColumn": 45,
+                  "startLine": 69
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Possible writing outside of the destination, make sure that the target path is nested in the intended destination"
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "ea2e80a3dcbb371aa073da81fb01e3d5cfd97967a8aefd0281182ebc4535a603764789903ade2692efb273cc7f534ed90c2997867b223d60c580ef5498fa034f_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/dataExport.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 55,
+                  "endLine": 61,
+                  "snippet": {
+                    "text": "      db.ordersCollection.find({ email: updatedEmail }).then((orders: Array<{"
+                  },
+                  "startColumn": 32,
+                  "startLine": 61
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "5ed8308dd51fd842ebaa15ebe95c5de8afe181a7ecc53d1e98a79e44ae0130a8049111f41baf5bd26e638dd2fa6bac9858b8a7cbfac096c3f357e2766f7216e2_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/fileServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 46,
+                  "endLine": 33,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('ftp/', file))"
+                  },
+                  "startColumn": 20,
+                  "startLine": 33
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "8b58518ab4f0ad5c59ac3823cf3eaaa4c6d6a3257ce468d7aeb6719dffcc34866b3c1f25b07b9d0525caa990b1e601e796a9b42f3dd13c925453b6c19c404f74_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/keyServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 57,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('encryptionkeys/', file))"
+                  },
+                  "startColumn": 20,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "2d4bdd38dffa26030f3d8d1f37baab0c162ba573962b8761e939a88b74ddc01cbdeedda2aea71c3a451a4f6c14419db3bb2e03aedaea05f1276019d6628b9769_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/keyServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 56,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('encryptionkeys/', file))"
+                  },
+                  "startColumn": 52,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Possible writing outside of the destination, make sure that the target path is nested in the intended destination"
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "72de84bd35e051811ce719a9d4b083c0a196010d781af349e2fa4bd1928a0b39a835bd3aaecfc6f4ff872b6d5d9580b127019c55774e825fbc97843ba286a301_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/likeProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 45,
+                  "endLine": 18,
+                  "snippet": {
+                    "text": "    db.reviewsCollection.findOne({ _id: id }).then((review: Review) => {"
+                  },
+                  "startColumn": 34,
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "94778387e78b3f2fff192708e257ea55ab1bb2911094310a87e827f455a44e3190f86778ea478cc374d50ba3e6193762465fb9641e9182e7eb602b1657b50c57_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/likeProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 24,
+                  "endLine": 25,
+                  "snippet": {
+                    "text": "            { _id: id },"
+                  },
+                  "startColumn": 13,
+                  "startLine": 25
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "72de84bd35e051811ce719a9d4b083c0a196010d781af349e2fa4bd1928a0b39a835bd3aaecfc6f4ff872b6d5d9580b127019c55774e825fbc97843ba286a301_1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/likeProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 57,
+                  "endLine": 31,
+                  "snippet": {
+                    "text": "                db.reviewsCollection.findOne({ _id: id }).then((review: Review) => {"
+                  },
+                  "startColumn": 46,
+                  "startLine": 31
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "94778387e78b3f2fff192708e257ea55ab1bb2911094310a87e827f455a44e3190f86778ea478cc374d50ba3e6193762465fb9641e9182e7eb602b1657b50c57_1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/likeProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 32,
+                  "endLine": 42,
+                  "snippet": {
+                    "text": "                    { _id: id },"
+                  },
+                  "startColumn": 21,
+                  "startLine": 42
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b1c6f316e0a532a0686043ba6babfbe772c03e5db3eeae87e468d049bb2552656ecb08cd1c7c80f7da4f86ba01400a76b3711235793fb50da5212be6671551e2_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/logfileServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 47,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('logs/', file))"
+                  },
+                  "startColumn": 20,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "394a5f867075548efd4e3a9468e85287edd98ee7bf1805ecc4941b0c155fb982bdbbb429ea7b1eb48c68d82f97ec6d6937852d176895b65a88c58ec331975250_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/logfileServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 46,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('logs/', file))"
+                  },
+                  "startColumn": 42,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Possible writing outside of the destination, make sure that the target path is nested in the intended destination"
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "02c7a0f9cc9fee123f9bd35451c68b8b03105a00cea4d9110281381444318b425e206b16a36eba53d0ea15b1e509f3d08f3a2b9a8580a39245026564d4da114b_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/login.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 169,
+                  "endLine": 36,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Users WHERE email = '${req.body.email || ''}' AND password = '${security.hash(req.body.password || '')}' AND deletedAt IS NULL`, { model: UserModel, plain: true }) // vuln-code-snippet vuln-line loginAdminChallenge loginBenderChallenge loginJimChallenge"
+                  },
+                  "startColumn": 28,
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "9311405a0362295583d5d9957cc85cf5c194e3ae029eb4f985ba03b629cc49bba3fb9bc0896e5db736ad829af1f3a2ec1fd2719356a95494c86f7f4fcd994672_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/login.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 86,
+                  "endLine": 36,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Users WHERE email = '${req.body.email || ''}' AND password = '${security.hash(req.body.password || '')}' AND deletedAt IS NULL`, { model: UserModel, plain: true }) // vuln-code-snippet vuln-line loginAdminChallenge loginBenderChallenge loginJimChallenge"
+                  },
+                  "startColumn": 66,
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "3e402fcd97a71050ec3fa810b8e2d34c4a357c9ff55e6b86be118fc21cb63639e5dcd4a5e8be9ae42615c0493953f9c5af3fb28086e4c22850537d7996234405_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/orderHistory.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 72,
+                  "endLine": 17,
+                  "snippet": {
+                    "text": "      const order = await ordersCollection.find({ email: updatedEmail })"
+                  },
+                  "startColumn": 49,
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "3cbca875931192e37b5ad06840c6922913671d2e4fee52e7c3bcec1b210a51dfc9a8c9f2def58c420b32f324d9be2237c43222a10270d6be40387e8c73e30aa0_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/orderHistory.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 57,
+                  "endLine": 36,
+                  "snippet": {
+                    "text": "    await ordersCollection.update({ _id: req.params.id }, { $set: { delivered: deliveryStatus, eta } })"
+                  },
+                  "startColumn": 35,
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "d5a6f1d8009d9b3ed326f659498f245d75ef0fe58f605109379c254e34844c0d83678b00f043d640930d6d211eb99bb296264cea399dcd1b8d3f75900362eab2_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/profileImageFileUpload.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 118,
+                  "endLine": 28,
+                  "snippet": {
+                    "text": "          fs.open(`frontend/dist/frontend/assets/public/images/uploads/${loggedInUser.data.id}.${uploadedFileType.ext}`, 'w', function (err, fd) {"
+                  },
+                  "startColumn": 19,
+                  "startLine": 28
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "12ed6a79260aec9758cb4458ede34a314cd24251bbee6c9a421c7616c9023a97136098f7cd9980b580458c9cfb9c6ab7523850c5bc94f5c3421798eb04ead9ce_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/profileImageUrlUpload.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 19,
+                  "endLine": 23,
+                  "snippet": {
+                    "text": "          .get(url)"
+                  },
+                  "startColumn": 16,
+                  "startLine": 23
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Untrusted input might be used to build an HTTP request, which can lead to a Server-side request forgery (SSRF) vulnerability. SSRF allows an attacker to send crafted requests from the server side to other internal or external systems. SSRF can lead to unauthorized access to sensitive data and, in some cases, allow the attacker to control applications or systems that trust the vulnerable service. To prevent this vulnerability, avoid allowing user input to craft the base request. Instead, treat it as part of the path or query parameter and encode it appropriately. When user input is necessary to prepare the HTTP request, perform strict input validation. Additionally, whenever possible, use allowlists to only interact with expected, trusted domains."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.request.ssrf-deepsemgrep.ssrf-deepsemgrep"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "8bf5fce241428f21f9d2d2e817e63101ca54773b29a81675ad33493d0835d30acf60a9d3944664f1ee01676a0c59f6c868a6f172e45a74a5945c0d39eca08b1c_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/profileImageUrlUpload.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 19,
+                  "endLine": 23,
+                  "snippet": {
+                    "text": "          .get(url)"
+                  },
+                  "startColumn": 16,
+                  "startLine": 23
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The following request request.get() was found to be crafted from user-input `req` which can lead to Server-Side Request Forgery (SSRF) vulnerabilities. It is recommended where possible to not allow user-input to craft the base request, but to be treated as part of the path or query parameter. When user-input is necessary to craft the request, it is recommeneded to follow OWASP best practices to prevent abuse. "
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-ssrf.express-ssrf"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "66b583807f454e093e7552fae2ee4ba116c470ceb2296f3f6c291665e80c5b4e3c7a398bdbd321b9debac506fdfecf1edf99b1673a5b80f509a582c20012db45_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/profileImageUrlUpload.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 136,
+                  "endLine": 31,
+                  "snippet": {
+                    "text": "              imageRequest.pipe(fs.createWriteStream(`frontend/dist/frontend/assets/public/images/uploads/${loggedInUser.data.id}.${ext}`))"
+                  },
+                  "startColumn": 54,
+                  "startLine": 31
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "10f5bde934240a03b258dfad945e15b107d36b5f56d627974ecbfdb0e4976e6a4b5599925e1260bd53c9e3ebccc7c8377b0fbf196a37a5e20c0d557d45530839_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/quarantineServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 57,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('ftp/quarantine/', file))"
+                  },
+                  "startColumn": 20,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "a78e32235b6464734dd076dc87fa8b648d3a18c446f8dff15b14f7dd5c84815e28dbde8a30f2ced96dc3bbcf8cbdb0727d6aeea519ebe4501b1fb7e06340ada9_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/quarantineServer.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 56,
+                  "endLine": 14,
+                  "snippet": {
+                    "text": "      res.sendFile(path.resolve('ftp/quarantine/', file))"
+                  },
+                  "startColumn": 52,
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Possible writing outside of the destination, make sure that the target path is nested in the intended destination"
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "341b20ff912700499bd86d5544be15789cd552a96aa090a2f9ab075b124e11b8015258f3b733cd0f67e35e419636609637f04bfb9b245f0381bcbdab0ab1bd97_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/redirect.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 25,
+                  "endLine": 19,
+                  "snippet": {
+                    "text": "      res.redirect(toUrl)"
+                  },
+                  "startColumn": 20,
+                  "startLine": 19
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a URL using user-controlled input which can lead to an open redirect vulnerability. An attacker can manipulate the URL and redirect users to an arbitrary domain. Open redirect vulnerabilities can lead to issues such as Cross-site scripting (XSS) or redirecting to a malicious domain for activities such as phishing to capture users' credentials. To prevent this vulnerability perform strict input validation of the domain against an allowlist of approved domains. Notify a user in your application that they are leaving the website. Display a domain where they are redirected to the user. A user can then either accept or deny the redirect to an untrusted site."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.open-redirect-deepsemgrep.open-redirect-deepsemgrep"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "12efbca8aa5f7ef234d468815e4b0ed9de9c8fdd030ab002d15bb8c21426a23725fb8446e235413991dde751c72ad73afc7d52e8b9fdfcc866c6917ad5e95665_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/redirect.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 25,
+                  "endLine": 19,
+                  "snippet": {
+                    "text": "      res.redirect(toUrl)"
+                  },
+                  "startColumn": 20,
+                  "startLine": 19
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-open-redirect.express-open-redirect"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "6119cecadc3b0244b38385652d513757aad6310260c319924f1f783c7cbdeb7c2ca14741e099eb58c51c0d7d9862b794c87e3b94a2c8a2af22f05b8e49c11a0a_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/search.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 159,
+                  "endLine": 23,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`) // vuln-code-snippet vuln-line unionSqlInjectionChallenge dbSchemaChallenge"
+                  },
+                  "startColumn": 28,
+                  "startLine": 23
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements."
+          },
+          "properties": {},
+          "ruleId": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "0584f75de48b03b40bdd4f54e55f6f3fe2d4d37aafff8904501aabf4425041250d15e8ff80941a05c349f428078862f1ec533ea068cbb9deb50972598152a3e0_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/search.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 82,
+                  "endLine": 23,
+                  "snippet": {
+                    "text": "    models.sequelize.query(`SELECT * FROM Products WHERE ((name LIKE '%${criteria}%' OR description LIKE '%${criteria}%') AND deletedAt IS NULL) ORDER BY name`) // vuln-code-snippet vuln-line unionSqlInjectionChallenge dbSchemaChallenge"
+                  },
+                  "startColumn": 74,
+                  "startLine": 23
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "a92ac344a2135b572320bebdf4e311a88aa52d1dc71f709686528a17ec827345e6e58ca177d8660aa6f6b0fc91c9136c789707cc2839f95745c2e11c9245fad8_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/showProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 66,
+                  "endLine": 34,
+                  "snippet": {
+                    "text": "    db.reviewsCollection.find({ $where: 'this.product == ' + id }).then((reviews: Review[]) => {"
+                  },
+                  "startColumn": 31,
+                  "startLine": 34
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "5b04216627a14a1e0b1f6d9cb8876d05d209eb7175e7eb6884e1a7f4cd96041b7c60e5c11393f1013b34a961f06d56b48db403890d41b8027301ee2fb02b89c4_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/trackOrder.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 68,
+                  "endLine": 17,
+                  "snippet": {
+                    "text": "    db.ordersCollection.find({ $where: `this.orderId === '${id}'` }).then((order: any) => {"
+                  },
+                  "startColumn": 30,
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "4362c3a06eee8ec746aad730079995b85a11386322a23cee311c92c6527c5dc2ba46391d58f01be0c59398e17abb8a88c965c93be4fd69c837576956d077afd0_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/updateProductReviews.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 27,
+                  "endLine": 18,
+                  "snippet": {
+                    "text": "      { _id: req.body.id }, // vuln-code-snippet vuln-line noSqlReviewsChallenge forgedReviewChallenge"
+                  },
+                  "startColumn": 7,
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "48a99b4c18f2788ae13592db540b0631928c796729f836cc4b5df91662861854479970492b05a3ca7f1914f8e8319700748a553e0467da510ccf8d26a3e4f5a3_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/userProfile.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 43,
+                  "endLine": 56,
+                  "snippet": {
+                    "text": "          const fn = pug.compile(template)"
+                  },
+                  "startColumn": 22,
+                  "startLine": 56
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "User data from `req` is being compiled into the template, which can lead to a Server Side Template Injection (SSTI) vulnerability."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.express-insecure-template-usage.express-insecure-template-usage"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "e18c659e80f107281366077b8704b2e3b233b8df7623a6e82972552fc3796a152c1b0d4aa66123ab1c1105dbc407cd24f91e25f35efc18bf4dc3fe7a74496069_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/vulnCodeFixes.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 69,
+                  "endLine": 79,
+                  "snippet": {
+                    "text": "    if (fs.existsSync('./data/static/codefixes/' + key + '.info.yml')) {"
+                  },
+                  "startColumn": 23,
+                  "startLine": 79
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "e18c659e80f107281366077b8704b2e3b233b8df7623a6e82972552fc3796a152c1b0d4aa66123ab1c1105dbc407cd24f91e25f35efc18bf4dc3fe7a74496069_1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/vulnCodeFixes.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 108,
+                  "endLine": 80,
+                  "snippet": {
+                    "text": "      const codingChallengeInfos = yaml.load(fs.readFileSync('./data/static/codefixes/' + key + '.info.yml', 'utf8'))"
+                  },
+                  "startColumn": 62,
+                  "startLine": 80
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "679253497a75a8ebabafc94e85dbe6d0215d43258b4864b467a959b7f74f2e1353803afcde8c95a0b05e2ace54ae4a309130a969ab1e08cb28005cd0931d2f1f_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/vulnCodeSnippet.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 67,
+                  "endLine": 93,
+                  "snippet": {
+                    "text": "  if (fs.existsSync('./data/static/codefixes/' + key + '.info.yml')) {"
+                  },
+                  "startColumn": 21,
+                  "startLine": 93
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "679253497a75a8ebabafc94e85dbe6d0215d43258b4864b467a959b7f74f2e1353803afcde8c95a0b05e2ace54ae4a309130a969ab1e08cb28005cd0931d2f1f_1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/routes/vulnCodeSnippet.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 106,
+                  "endLine": 94,
+                  "snippet": {
+                    "text": "    const codingChallengeInfos = yaml.load(fs.readFileSync('./data/static/codefixes/' + key + '.info.yml', 'utf8'))"
+                  },
+                  "startColumn": 60,
+                  "startLine": 94
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.express-fs-filename.express-fs-filename"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "7f5039eecfb79db3161546344ba03dc8c3cf9bc7e155180191c827e2c082544d3b834998ebb9325ba02270c38cbdfd343ac6c50cfebdaeae399b5a2bef3236e3_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/test/api/2faSpec.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 39,
+                  "endLine": 149,
+                  "snippet": {
+                    "text": "    }, 'this_surly_isnt_the_right_key')"
+                  },
+                  "startColumn": 8,
+                  "startLine": 149
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module)."
+          },
+          "properties": {},
+          "ruleId": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b323ae5e1b7f500b1b9e029d58c4f06f3108195d4265027267fe3cd5de7a4894af7f03a96a683ad63964e65281e4c96b608861824dd8b25d2148d1a55ba743b1_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/test/server/verifySpec.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 182,
+                  "endLine": 263,
+                  "snippet": {
+                    "text": "      req.headers = { authorization: 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7ImVtYWlsIjoiand0bjNkQGp1aWNlLXNoLm9wIn0sImlhdCI6MTUwODYzOTYxMiwiZXhwIjo5OTk5OTk5OTk5fQ.' }"
+                  },
+                  "startColumn": 38,
+                  "startLine": 263
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+          },
+          "properties": {},
+          "ruleId": "javascript.lang.hardcoded.headers.hardcoded-bearer-token.hardcoded-bearer-token"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b765c8797f2a629c43c62440b4c8d873c4cac1c26d7cca8db9af904afc76e4cfed84365f60dee893fb56cf5a872c82ef98997424237c68d4e2d266d9700a469b_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/test/server/verifySpec.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 167,
+                  "endLine": 275,
+                  "snippet": {
+                    "text": "      req.headers = { authorization: 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7ImVtYWlsIjoiand0bjNkQCJ9LCJpYXQiOjE1MDg2Mzk2MTIsImV4cCI6OTk5OTk5OTk5OX0.' }"
+                  },
+                  "startColumn": 38,
+                  "startLine": 275
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+          },
+          "properties": {},
+          "ruleId": "javascript.lang.hardcoded.headers.hardcoded-bearer-token.hardcoded-bearer-token"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "45239c88d621b1fe5a57a0d77f16b70e7c8cd743c8f54d49a40b86f1511d9e4a053b5d303f33aa89777976e08c6a1a8c432fdbb0952e6789850a12ef9b584f13_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/test/api/productReviewApiSpec.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 9,
+                  "endLine": 68,
+                  "snippet": {
+                    "text": "    http.get(`${REST_URL}/products/1/reviews`, (res: IncomingMessage) => {"
+                  },
+                  "startColumn": 5,
+                  "startLine": 68
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Checks for any usage of http servers instead of https servers. Encourages the usage of https protocol instead of http, which does not have TLS and is therefore unencrypted. Using http can lead to man-in-the-middle attacks in which the attacker is able to read sensitive information."
+          },
+          "properties": {},
+          "ruleId": "problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "e700f21ac496af53888e7ffb571b0fc99cacafc01231723281e5368a16a48854b68a678b5ecd9127e9d262d10d3301dfde1383facc2f70f0845506bab7756153_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/arjun/juice-shop/backend/test/api/productReviewApiSpec.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 7,
+                  "endLine": 80,
+                  "snippet": {
+                    "text": "    http.get(`${REST_URL}/products/1/reviews`, (res: IncomingMessage) => {\n      let body = ''\n\n      res.on('data', (chunk: string) => {\n        body += chunk\n      })\n\n      res.on('end', () => {\n        const response = JSON.parse(body)\n        reviewId = response.data[0]._id\n        done()\n      })\n    })"
+                  },
+                  "startColumn": 5,
+                  "startLine": 68
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Checks for requests sent to http:// URLs. This is dangerous as the server is attempting to connect to a website that does not encrypt traffic with TLS. Instead, only send requests to https:// URLs."
+          },
+          "properties": {},
+          "ruleId": "problem-based-packs.insecure-transport.js-node.http-request.http-request"
+        }
+      ]
+    }
+  ]
+}
