@@ -56,7 +56,7 @@ def main():
         "node": ["p/default", "p/owasp-top-ten", "p/cwe-top-25","p/nodejs","p/insecure-transport-jsnode", "p/eslint"],
         "python-flask": ["p/bandit","p/default","p/flask","p/python","p/secure-defaults", "p/owasp-top-ten", "p/cwe-top-25"],
         "python-django": ["p/bandit","p/default","p/django","p/python","p/secure-defaults", "p/owasp-top-ten", "p/cwe-top-25"],
-        "php": ["p/default", "p/owasp-top-ten", "p/cwe-top-25","p/php", "p/php-laravel", "p/phpcs-security-audit"]
+        "php": ["p/default", "p/owasp-top-ten", "p/cwe-top-25","p/php", "p/php-laravel", "p/phpcs-security-audit"],
         "react": ["p/default","p/react", "p/typescript", "p/javascript", "p/eslint"],
         "angular": ["p/default","p/angular", "p/typescript", "p/javascript", "p/eslint"]
     }
